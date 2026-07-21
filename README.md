@@ -1,3 +1,5 @@
+![OpenG7 Platform](docs/assets/openg7-ai-evals.png)
+
 # OpenG7 AI Evals
 
 Reproducible evaluation framework for the quality, safety, sovereignty and operational reliability of OpenG7 models and agents.
