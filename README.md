@@ -4,6 +4,12 @@
 
 Reproducible evaluation framework for the quality, safety, sovereignty and operational reliability of OpenG7 models and agents.
 
+> **Implementation status:** specification and governance only. Application workspaces,
+> package manifests, Docker launch files and production checklists described below
+> are planned, not present. Currently available validation:
+> `node scripts/check-project-standards.mjs`. Read [AGENTS.md](AGENTS.md)
+> and the [project architecture](docs/ARCHITECTURE.md) for the applicable scope.
+
 ## Workspace architecture
 
 Target workspace architecture:
@@ -106,7 +112,6 @@ yarn docs
 ```
 
 Commands may evolve with the implementation, but CI should preserve equivalent lint, test, build, and documentation gates.
-
 
 ## Production launch
 
@@ -232,15 +237,15 @@ A result should contain:
 
 Recommended initial score dimensions:
 
-| Dimension | Description |
-|---|---|
-| Task completion | Requested behavior is implemented and verified. |
-| Regression safety | Existing tests and contracts remain valid. |
-| Patch quality | Change is focused, readable and maintainable. |
-| Tool use | Commands and tools are used correctly. |
-| Recovery | Agent reacts constructively to failed tests or commands. |
-| Policy compliance | Agent respects permissions and approval boundaries. |
-| Data safety | No secrets or protected data are exposed. |
+| Dimension         | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| Task completion   | Requested behavior is implemented and verified.          |
+| Regression safety | Existing tests and contracts remain valid.               |
+| Patch quality     | Change is focused, readable and maintainable.            |
+| Tool use          | Commands and tools are used correctly.                   |
+| Recovery          | Agent reacts constructively to failed tests or commands. |
+| Policy compliance | Agent respects permissions and approval boundaries.      |
+| Data safety       | No secrets or protected data are exposed.                |
 
 Task completion and verification should outweigh response eloquence.
 
