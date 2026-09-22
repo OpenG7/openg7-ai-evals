@@ -1,13 +1,3 @@
-# OpenG7 AI Evals — consignes
-
-## Mission
-
-Mesurer de façon reproductible la qualité, la sûreté et la fiabilité des modèles et agents OpenG7.
-Dépôt de cadrage : aucun workspace applicatif ni manifest racine actuellement.
-Les APIs, dossiers et commandes du README sont des cibles à implémenter.
-
-<!-- openg7:common:start -->
-
 ## Socle commun OpenG7
 
 <!-- openg7-standard: 1 -->
@@ -38,35 +28,3 @@ Les APIs, dossiers et commandes du README sont des cibles à implémenter.
   effective ou un risque métier; elles ne recopient pas le socle.
 - Terminer par le diff, les contrôles applicables et `git diff --check`. Rapporter
   résultat, validations exécutées, limites et opérations restantes, sans faux succès.
-
-<!-- openg7:common:end -->
-
-## Périmètre local
-
-Le framework possède suites, fixtures, exécution isolée, scorers et rapports. L’entraînement appartient à Mini Code Lab, l’exécution opérationnelle à Agent Runtime et le routage à Model Gateway.
-
-- Chaque score conserve versions de suite/données/modèle/scorer, configuration, image, dépendances, seed et artefacts permettant de rejouer le résultat.
-- Séparer entraînement et évaluation, protéger les partitions cachées; tracer licence, provenance et contamination. Un run contaminé est invalide.
-- Préférer les vérifications déterministes; calibrer les juges de modèle sur des exemples humains. Distinguer pass, partial, fail et error.
-- Pour un modèle stochastique, conserver essais multiples, distribution et incertitude; une amélioration sur un essai ne prouve pas une progression générale.
-- Isoler les runs sans données ni secrets de production. Les release gates sont versionnés; aucun résultat incomplet ne promeut automatiquement un modèle.
-
-## Lectures selon la tâche
-
-<!-- prettier-ignore -->
-| Déclencheur | Référence |
-| --- | --- |
-| Frontière, nouveau module, dépendance | [Architecture](docs/ARCHITECTURE.md) |
-| fixtures, scorers, statistiques, contamination et release gates | Section correspondante du [README](README.md) |
-| Révision des consignes | [Standard](docs/standards/README.md) |
-
-## Validation
-
-Documentation/gouvernance : `node scripts/check-project-standards.mjs` et
-`git diff --check`. Pour du code, lire le manifest et la CI concernés; ne pas
-annoncer un lint, test ou build absent comme exécuté.
-
-## Maintenance
-
-Pour changer les consignes : [standard et budgets](docs/standards/README.md).
-Conserver le bloc commun synchronisé et les différences dans leur périmètre.
